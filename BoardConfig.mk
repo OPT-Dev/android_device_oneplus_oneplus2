@@ -200,5 +200,9 @@ BOARD_HARDWARE_CLASS += \
     hardware/cyanogen/cmhw
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 
+# Test
+-include external/stlport/libstlport.mk
+include external/stlport/libstlport.mk
+
 # inherit from the proprietary version
 -include vendor/oneplus/oneplus2/BoardConfigVendor.mk
