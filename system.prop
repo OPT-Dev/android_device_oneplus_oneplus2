@@ -99,3 +99,6 @@ ro.qc.sdk.sensors.gestures=true
 
 # Time services
 persist.timed.enable=true
+
+# Fix Bootloop
+sys.disable_ext_animation=1
