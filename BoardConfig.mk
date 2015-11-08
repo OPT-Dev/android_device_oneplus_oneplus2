@@ -28,6 +28,8 @@ BOARD_VENDOR := oneplus
 TARGET_BOOTLOADER_BOARD_NAME := MSM8994
 TARGET_NO_BOOTLOADER := true
 
+TARGET_USES_C2D_COMPOSITION := true
+
 # Platform
 TARGET_BOARD_PLATFORM := msm8994
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno430
@@ -47,7 +49,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 
 TARGET_CPU_CORTEX_A53 := true
 
-TARGET_BOARD_SUFFIX := _64
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 TARGET_USES_64_BIT_BINDER := true
 
 # Kernel
@@ -106,6 +108,9 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 
+# Disable HW based full disk encryption
+TARGET_HW_DISK_ENCRYPTION := false
+
 # Font
 EXTENDED_FONT_FOOTPRINT := true
 
@@ -148,9 +153,6 @@ TARGET_POWERHAL_VARIANT := qcom
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
 
-# RPC
-TARGET_NO_RPC := true
-
 # Enable dexpreopt to speed boot time
 ifeq ($(HOST_OS),linux)
   ifeq ($(call match-word-in-list,$(TARGET_BUILD_VARIANT),user),true)
@@ -188,6 +190,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Recovery
 TARGET_RECOVERY_FSTAB := device/oneplus/oneplus2/rootdir/etc/fstab.qcom
 
+# Logging
+TARGET_USES_LOGD=false
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
@@ -201,10 +206,8 @@ TARGET_HW_DISK_ENCRYPTION := false
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # CM Hardware
-BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS += \
-    device/oneplus/oneplus2/cmhw \
-    hardware/cyanogen/cmhw
+# CM Hardware
+BOARD_HARDWARE_CLASS := device/oneplus/oneplus2/cmhw
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 
 # inherit from the proprietary version
