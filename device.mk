@@ -84,6 +84,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
+    
+# Support
+PRODUCT_PACKAGES += \
+    libcurl \
+    libxml2
 
 # Adreno driver dependencies
 PRODUCT_PACKAGES += \
