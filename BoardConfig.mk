@@ -191,7 +191,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_RECOVERY_FSTAB := device/oneplus/oneplus2/rootdir/etc/fstab.qcom
 
 # Logging
-TARGET_USES_LOGD=false
+#TARGET_USES_LOGD=false
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
@@ -205,7 +205,6 @@ TARGET_HW_DISK_ENCRYPTION := false
 # Enable keymaster app checking
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
-# CM Hardware
 # CM Hardware
 BOARD_HARDWARE_CLASS := device/oneplus/oneplus2/cmhw
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
