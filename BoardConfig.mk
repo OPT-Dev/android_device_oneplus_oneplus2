@@ -113,11 +113,10 @@ EXTENDED_FONT_FOOTPRINT := true
 TARGET_GPS_HAL_PATH := device/oneplus/oneplus2/gps
 TARGET_NO_RPC := true
 
-# Graphics
+# Display
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-TARGET_USES_ION := true
-TARGET_USES_NEW_ION_API :=true
 TARGET_USES_C2D_COMPOSITION := true
+TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 
 # Shader cache config options
@@ -144,8 +143,6 @@ TARGET_POWERHAL_VARIANT := qcom
 
 # RPC
 TARGET_NO_RPC := true
-
-BOARD_EGL_CFG := device/oneplus/oneplus2/egl.cfg
 
 # Enable dexpreopt to speed boot time
 ifeq ($(HOST_OS),linux)
