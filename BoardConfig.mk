@@ -115,8 +115,9 @@ TARGET_NO_RPC := true
 
 # Display
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
+TARGET_USES_NEW_ION_API :=true
+TARGET_USES_OVERLAY := true
 USE_OPENGL_RENDERER := true
 
 # Shader cache config options
@@ -132,6 +133,9 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 HAVE_ADRENO_SOURCE:= false
 OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 
+# Fonts
+EXTENDED_FONT_FOOTPRINT := true
+
 # Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
@@ -140,6 +144,9 @@ TARGET_LIBINIT_DEFINES_FILE := device/oneplus/oneplus2/init/init_oneplus2.cpp
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
+
+# Qualcomm support
+BOARD_USES_QCOM_HARDWARE := true
 
 # RPC
 TARGET_NO_RPC := true
@@ -186,6 +193,12 @@ include device/qcom/sepolicy/sepolicy.mk
 
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
+
+#Disable HW based full disk encryption
+TARGET_HW_DISK_ENCRYPTION := false
+
+# Enable keymaster app checking
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # CM Hardware
 BOARD_USES_CYANOGEN_HARDWARE := true
