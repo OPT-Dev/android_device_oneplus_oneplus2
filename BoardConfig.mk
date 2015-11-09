@@ -34,6 +34,8 @@ TARGET_USES_C2D_COMPOSITION := true
 TARGET_BOARD_PLATFORM := msm8994
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno430
 
+USE_CLANG_PLATFORM_BUILD := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -112,16 +114,9 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 # Disable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := false
 
-# Font
-EXTENDED_FONT_FOOTPRINT := true
-
-# Enable Minikin text layout engine (will be the default soon)
-USE_MINIKIN := true
-
 # GPS
 TARGET_GPS_HAL_PATH := device/oneplus/oneplus2/gps
 BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
-TARGET_NO_RPC := true
 
 # Display
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
@@ -130,14 +125,7 @@ TARGET_USES_NEW_ION_API := true
 TARGET_USES_OVERLAY := true
 USE_OPENGL_RENDERER := true
 
-# Shader cache config options
-# Maximum size of the  GLES Shaders that can be cached for reuse.
-# Increase the size if shaders of size greater than 12KB are used.
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
-
-# Maximum GLES shader cache size for each app to store the compiled shader
-# binaries. Decrease the size if RAM or Flash Storage size is a limitation
-# of the device.
 MAX_EGL_CACHE_SIZE := 2048*1024
 
 HAVE_ADRENO_SOURCE:= false
@@ -147,20 +135,32 @@ OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 EXTENDED_FONT_FOOTPRINT := true
 
 # Init
-TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 TARGET_LIBINIT_DEFINES_FILE := device/oneplus/oneplus2/init/init_oneplus2.cpp
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
+# Memory
+MALLOC_IMPL := dlmalloc
+
+# Protobuf-c
+PROTOBUF_SUPPORTED := true
+
+# RPC
+TARGET_NO_RPC := true
+
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
 
-WITH_DEXPREOPT_BOOT_IMG_ONLY := false
-WITH_DEXPREOPT := false
-DONT_DEXPREOPT_PREBUILTS := true
+# Enable dexpreopt to speed boot time
+ifeq ($(HOST_OS),linux)
+  ifeq ($(call match-word-in-list,$(TARGET_BUILD_VARIANT),user),true)
+    ifeq ($(WITH_DEXPREOPT_BOOT_IMG_ONLY),)
+      WITH_DEXPREOPT_BOOT_IMG_ONLY := true
+    endif
+  endif
+endif
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
