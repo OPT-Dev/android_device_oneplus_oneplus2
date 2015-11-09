@@ -124,6 +124,7 @@ TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
 TARGET_USES_OVERLAY := true
 USE_OPENGL_RENDERER := true
+TARGET_USE_COMPAT_GRALLOC_PERFORM := true
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
@@ -202,7 +203,7 @@ BOARD_USES_QC_TIME_SERVICES := true
 #Disable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := false
 
-# Enable keymaster app checking
+# Keymaster
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # CM Hardware
