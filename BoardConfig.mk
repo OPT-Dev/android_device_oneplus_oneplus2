@@ -142,10 +142,10 @@ TARGET_LIBINIT_DEFINES_FILE := device/oneplus/oneplus2/init/init_oneplus2.cpp
 TARGET_POWERHAL_VARIANT := qcom
 
 # Memory
-MALLOC_IMPL := dlmalloc
+#MALLOC_IMPL := dlmalloc
 
 # Protobuf-c
-PROTOBUF_SUPPORTED := false
+PROTOBUF_SUPPORTED := true
 
 # RPC
 TARGET_NO_RPC := true
