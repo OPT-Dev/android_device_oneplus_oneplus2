@@ -145,7 +145,7 @@ TARGET_POWERHAL_VARIANT := qcom
 #MALLOC_IMPL := dlmalloc
 
 # Protobuf-c
-PROTOBUF_SUPPORTED := true
+#PROTOBUF_SUPPORTED := true
 
 # RPC
 TARGET_NO_RPC := true
