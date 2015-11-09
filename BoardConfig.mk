@@ -126,10 +126,9 @@ TARGET_NO_RPC := true
 # Display
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_USES_ION := true
-TARGET_USES_NEW_ION_API :=true
+TARGET_USES_NEW_ION_API := true
 TARGET_USES_OVERLAY := true
 USE_OPENGL_RENDERER := true
-TARGET_USE_COMPAT_GRALLOC_PERFORM := true
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
