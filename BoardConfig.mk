@@ -207,4 +207,5 @@ BOARD_HARDWARE_CLASS := device/oneplus/oneplus2/cmhw
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 
 # inherit from the proprietary version
--include vendor/oneplus/oneplus2/BoardConfigVendor.mk
+-include vendor/oneplus/oneplus2/oneplus2-vendor.mk
+-include vendor/huawei/angler/angler-vendor.mk
