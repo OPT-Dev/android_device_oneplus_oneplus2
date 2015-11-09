@@ -114,6 +114,9 @@ TARGET_HW_DISK_ENCRYPTION := false
 # Font
 EXTENDED_FONT_FOOTPRINT := true
 
+# Enable Minikin text layout engine (will be the default soon)
+USE_MINIKIN := true
+
 # GPS
 TARGET_GPS_HAL_PATH := device/oneplus/oneplus2/gps
 TARGET_NO_RPC := true
