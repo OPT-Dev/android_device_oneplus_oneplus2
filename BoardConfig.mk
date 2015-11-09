@@ -119,6 +119,7 @@ USE_MINIKIN := true
 
 # GPS
 TARGET_GPS_HAL_PATH := device/oneplus/oneplus2/gps
+BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 TARGET_NO_RPC := true
 
 # Display
@@ -157,14 +158,9 @@ TARGET_POWERHAL_VARIANT := qcom
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
 
-# Enable dexpreopt to speed boot time
-ifeq ($(HOST_OS),linux)
-  ifeq ($(call match-word-in-list,$(TARGET_BUILD_VARIANT),user),true)
-    ifeq ($(WITH_DEXPREOPT_BOOT_IMG_ONLY),)
-      WITH_DEXPREOPT_BOOT_IMG_ONLY := true
-    endif
-  endif
-endif
+WITH_DEXPREOPT_BOOT_IMG_ONLY := false
+WITH_DEXPREOPT := false
+DONT_DEXPREOPT_PREBUILTS := true
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
