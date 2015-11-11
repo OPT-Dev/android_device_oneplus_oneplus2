@@ -179,9 +179,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/synaptics.kl:system/usr/keylayout/synaptics.kl
 
 # Keyhandler
-PRODUCT_PACKAGES += \
-    ConfigPanel \
-    com.cyanogenmod.keyhandler
+#PRODUCT_PACKAGES += \
+#    ConfigPanel \
+#    com.cyanogenmod.keyhandler
 
 PRODUCT_SYSTEM_SERVER_JARS += com.cyanogenmod.keyhandler
 
